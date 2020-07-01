@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  microservice:
+    build: ./Backend/ms-satisfaction/
+    image: rleon/microservice:latest
+    environment: 
+      - uri_db=mongodb+srv://platzi-admi:RYBqRyuM3mzNSTdQ@curso-platzi.ir4mx.mongodb.net/farmacias-peruanas?retryWrites=true&w=majority
+      - db=farmacias-peruanas      
+    depends_on: 
+      - mysql_server
+    ports:
+      - "8080:8080"
+    restart: on-failure
+    entrypoint: dockerize -wait tcp://mysql_server:3306 -timeout 10m java -jar /workspace/app.jar
+    networks:
+      - backend
+
+volumes:
+  my-data:
+
+networks:
+  backend: 

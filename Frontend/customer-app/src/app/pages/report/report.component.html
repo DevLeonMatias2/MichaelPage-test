@@ -1,0 +1,32 @@
+<div class="mt-5">
+  <div class="text-center">
+    <h2>Reporte de Encuestados</h2>
+  </div>
+  <div class="m-auto">
+    <button class="btn btn-outline-danger" routerLink="/">Nueva Encuesta</button>
+  </div>
+
+  <div>
+    <table class="table mt-3 table-hover table-sm">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Puntaje</th>
+        <th scope="col">Fecha</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let client of clientList; let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{client?.name}}</td>
+        <td>{{client?.email}}</td>
+        <td>{{client?.score}}</td>
+        <td>{{client?.createDate| date: 'short'}}</td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

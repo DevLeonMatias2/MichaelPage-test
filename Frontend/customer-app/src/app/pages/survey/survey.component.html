@@ -1,0 +1,64 @@
+<div class="pt-5 text-center">
+
+
+  <div class="absolute">
+    <img src="../../../assets/img/fp-logo.png" width="200"/>
+  </div>
+
+  <h2>Customer Satisfaction</h2>
+  <div class="row justify-content-md-center">
+    <div class="form-group col-md-3">
+      <button class="btn btn-block btn-outline-primary" routerLink="/report">Reporte</button>
+    </div>
+    <div class="form-group col-md-3">
+      <button class="btn btn-block btn-outline-dark" (click)="clearForm(f)">Limpiar</button>
+    </div>
+  </div>
+  <hr/>
+  <h3>Tu opinion es importante para nosotros</h3>
+  <div class="animated fadeIn faster mt-3 pt-5">
+
+    <form (ngSubmit)="save(f)" #f="ngForm" class="w-50 m-auto">
+
+      <div class="form-group">
+        <input class="form-control form-control-lg"
+               type="email"
+               [(ngModel)]="client.email"
+               name="email"
+               autofocus
+               autocomplete="off"
+               required
+               placeholder="Correo">
+      </div>
+      <div class="form-group">
+        <input class="form-control form-control-lg"
+               type="text"
+               [(ngModel)]="client.name"
+               name="name"
+               autocomplete="off"
+               required
+               placeholder="Nombres y Apellidos">
+      </div>
+
+      <p class="text-center font-weight-bold mt-5">Considerando un puntaje del 1 al 10, siendo 0: Muy Malo y 10: Muy
+        Bueno, ¿Como califica la atencion?</p>
+
+      <div *ngFor="let sc of score" class="custom-control custom-radio custom-control-inline ">
+        <input type="radio" id="customRadioInline{{sc}}"
+               [(ngModel)]="client.score"
+               name="customRadioInline1"
+               required
+               class="custom-control-input" value="{{sc}}">
+        <label class="custom-control-label" for="customRadioInline{{sc}}">{{sc}}</label>
+      </div>
+      <hr>
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-danger btn-lg btn-block">
+          <i class="fas fa-save"></i>
+          Guardar
+        </button>
+      </div>
+    </form>
+
+  </div>
+</div>

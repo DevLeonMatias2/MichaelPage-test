@@ -1,0 +1,10 @@
+table {
+  display: block;
+  height: 350px;
+  overflow-y: scroll;
+}
+
+tr td {
+  width: 25%;
+}
+
