@@ -26,4 +26,12 @@ public class Client {
 
     private String msj;
 
+    public Client(String id, String email, String name, Date createDate, int score, String msj) {
+        this.id = id;
+        this.email = email;
+        this.name = name;
+        this.createDate = createDate;
+        this.score = score;
+        this.msj = msj;
+    }
 }
