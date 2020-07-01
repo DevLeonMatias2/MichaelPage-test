@@ -15,7 +15,7 @@
 
 Swagger :
 
-Ver Dcoumentacion [Swagger](http://localhost:8086/michaelpage/swagger-ui.html)
+Ver Dcoumentacion [Swagger](http://localhost:8081/michaelpage/swagger-ui.html)
 
 
 #### Todo instalar con Docker
@@ -47,6 +47,25 @@ Para ver las imagenes corriendo
 ```sh
 $ docker ps
 ```
+Body de el endpoint de creacion de nuevo registro
+```sh
+{
+    "email": "leon@gmail.com",
+    "name": "luis alberto",
+    "createDate": "2020-07-01T14:59:15.870+00:00",
+    "score": 0,
+    "msj": "Esta es la encuesta"
+}
+```
+
+Endpoints
+```sh
+[POST] http://localhost:8081/michaelpage/client/new
+[GET] http://localhost:8081/michaelpage/client/report
+```
+
+
+
 ==========================================================================================================
 ## Documentacion de la Web App
 
