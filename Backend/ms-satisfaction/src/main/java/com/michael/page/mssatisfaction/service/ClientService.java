@@ -9,8 +9,5 @@ import java.util.List;
 public interface ClientService {
 
     Client createNewQualifier(Client client);
-
-    Client findByEmail(String email);
-
     List<Client> findAll();
 }

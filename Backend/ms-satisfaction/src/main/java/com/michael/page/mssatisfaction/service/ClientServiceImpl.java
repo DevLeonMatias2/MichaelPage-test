@@ -27,12 +27,6 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Client findByEmail(String email) {
-        logger.info("find Email ->{}",email);
-        return clientDao.findByEmail(email);
-    }
-
-    @Override
     public List<Client> findAll() {
         return clientDao.findAll() ;
     }
